@@ -32,7 +32,7 @@ pipeline{
         } */
         
         
-        stage("deploy"){
+        stage("depploy"){
             steps{
                 deploy( 
                     filepath: "target/java-tomcat-maven-example.war"

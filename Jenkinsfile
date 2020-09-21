@@ -34,7 +34,9 @@ pipeline{
         
         stage("deploy"){
             steps{
-                sh "sudo cp target/java-tomcat-maven-example.war /usr/share/tomcat/webapps"
+                deploy( 
+                    filepath: "target/java-tomcat-maven-example.war"
+                      )
                  
                 //step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartAllServices'], useCustomDockerComposeFile: true])
             }   

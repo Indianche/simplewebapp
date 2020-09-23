@@ -35,7 +35,7 @@ pipeline{
         stage("deploy"){
             steps{
                 deployTomcat( 
-                    war: "target/java-tomcat-maven-example.war"
+                    war: "/home/ubuntu/workspace/newdemo/target/java-tomcat-maven-example.war"
                       )
                  
                 //step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartAllServices'], useCustomDockerComposeFile: true])

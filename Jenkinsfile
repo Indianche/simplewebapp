@@ -34,7 +34,7 @@ pipeline{
         
         stage("deploy"){
             steps{
-                deploy( 
+                deployTomcat( 
                     war: "target/java-tomcat-maven-example.war"
                       )
                  

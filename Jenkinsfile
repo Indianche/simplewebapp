@@ -11,7 +11,9 @@ pipeline{
        
         stage('Git Checkout') {
             steps{
+                sh "wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war"
                 gitCheckout(
+                    
                     branch: "master",
                     url: "https://github.com/Indianche/simplewebapp.git"
                 )
@@ -36,6 +38,7 @@ pipeline{
             steps{
                 deployTomcat( 
                     war: "/home/ubuntu/workspace/newdemo/target/java-tomcat-maven-example.war"
+                    war2: "/home/ubuntu/workspace/sample.war"
                       )
                  
                 //step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartAllServices'], useCustomDockerComposeFile: true])

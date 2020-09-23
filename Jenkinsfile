@@ -32,10 +32,10 @@ pipeline{
         } */
         
         
-        stage("depploy"){
+        stage("deploy"){
             steps{
-                deplloy( 
-                    fillepath: "target/java-tomcat-maven-example.war"
+                deploy( 
+                    'target/java-tomcat-maven-example.war'
                       )
                  
                 //step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartAllServices'], useCustomDockerComposeFile: true])
